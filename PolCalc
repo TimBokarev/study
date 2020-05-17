@@ -1,0 +1,8 @@
+
+
+formula = input("введите выражене в формате польской нотации: ")
+
+formula_items = formula.split(" ")
+
+print(formula_items)
+print(type(formula_items))
