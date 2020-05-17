@@ -1,8 +1,26 @@
 
 
-formula = input("введите выражене в формате польской нотации: ")
+
+formula = input("введите выражение в формате польской нотации: ")
 
 formula_items = formula.split(" ")
 
+if formula_items[0] == "+":
+    result = int(formula_items[1]) + int(formula_items[2])
+elif formula_items[0] == "-":
+    result = int(formula_items[1]) - int(formula_items[2])
+elif formula_items[0] == "-":
+    result = int(formula_items[1]) - int(formula_items[2])
+elif formula_items[0] == "-":
+    result = int(formula_items[1]) - int(formula_items[2])
+else:
+    print("такой операции мы не знаем")
+
+
 print(formula_items)
 print(type(formula_items))
+
+print(f"результат операции: {result}")
+
+
+
