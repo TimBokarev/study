@@ -23,4 +23,7 @@ print(type(formula_items))
 print(f"результат операции: {result}")
 
 
+# еще немного текста
+
+
 
