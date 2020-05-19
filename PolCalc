@@ -1,29 +1,48 @@
 
-
-
 formula = input("введите выражение в формате польской нотации: ")
 
 formula_items = formula.split(" ")
 
-if formula_items[0] == "+":
-    result = int(formula_items[1]) + int(formula_items[2])
-elif formula_items[0] == "-":
-    result = int(formula_items[1]) - int(formula_items[2])
-elif formula_items[0] == "-":
-    result = int(formula_items[1]) - int(formula_items[2])
-elif formula_items[0] == "-":
-    result = int(formula_items[1]) - int(formula_items[2])
+try:
+    assert len(formula_items) == 3, "количество аргументов должно быть ровно три"
+except Exception as e:
+    print(e)
 else:
-    print("такой операции мы не знаем")
+
+    try:
+        assert formula_items[0] == "+" or formula_items[0] == "-" or formula_items[0] == "*" or formula_items[0] == "/", \
+            "недопустимый символ математической операции"
+    except Exception as e:
+        print(e)
+    else:
+
+        try:
+            assert formula_items[1].isdigit() == True or formula_items[2].isdigit() == True, \
+                "второй и третий аргумент должны быть цифрами"
+        except Exception as e:
+            print(e)
+        else:
+            try:
+                assert formula_items[0] != "/" and formula_items[2] != "0", \
+                    "на ноль делить нельзя"
+            except Exception as e:
+                print(e)
+            else:
+
+                if formula_items[0] == "+":
+                    result = int(formula_items[1]) + int(formula_items[2])
+                elif formula_items[0] == "-":
+                    result = int(formula_items[1]) - int(formula_items[2])
+                elif formula_items[0] == "*":
+                    result = int(formula_items[1]) * int(formula_items[2])
+                elif formula_items[0] == "/":
+                    result = int(formula_items[1]) / int(formula_items[2])
+                else:
+                    result = "науке неизвестен"
+                print(f"результат операции: {result}")
 
 
-print(formula_items)
-print(type(formula_items))
 
-print(f"результат операции: {result}")
-
-
-# еще немного текста
 
 
 
