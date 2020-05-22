@@ -1,7 +1,7 @@
 
 formula = input("введите выражение в формате польской нотации: ")
-
 formula_items = formula.split(" ")
+list_of_operations = ["+", "-", "*", "/"]
 
 try:
     assert len(formula_items) == 3, "количество аргументов должно быть ровно три"
@@ -10,14 +10,13 @@ except Exception as e:
 else:
 
     try:
-        assert formula_items[0] == "+" or formula_items[0] == "-" or formula_items[0] == "*" or formula_items[0] == "/", \
-            "недопустимый символ математической операции"
+        assert formula_items[0] in list_of_operations, "недопустимый символ математической операции"
     except Exception as e:
         print(e)
     else:
 
         try:
-            assert formula_items[1].isdigit() == True or formula_items[2].isdigit() == True, \
+            assert formula_items[1].isdigit() == True and formula_items[2].isdigit() == True, \
                 "второй и третий аргумент должны быть цифрами"
         except Exception as e:
             print(e)
