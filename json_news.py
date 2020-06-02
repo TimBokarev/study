@@ -17,8 +17,6 @@ def news_reader(file_name):
 
     return news_extract
 
-# print(news_reader('newsafr.json'))
-
 
 def words_counter(news_string):
 
@@ -45,7 +43,7 @@ def words_counter(news_string):
         freq.append(count_dict[w1])
     freq.sort(reverse=True)
     top_10 = freq[0:10:1]
-    print(top_10)
+    # print(top_10)
 
     for w2 in count_dict:
         if count_dict[w2] in top_10:
