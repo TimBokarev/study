@@ -36,9 +36,17 @@ def words_counter(news_string):
         if len(word_in_test) > 6:
             words_7plus_list.append(word_in_test)
 
+
+# приводим все в нижний регистр
+    words_7plus_list_low_register = []
+    for word_in_test1 in words_7plus_list:
+        word_in_test1 = word_in_test1.lower()
+        words_7plus_list_low_register.append(word_in_test1)
+    # print(words_7plus_list_low_register)
+
     count_dict = {}
     for w in words_7plus_list:
-        count_dict[w] = words_7plus_list.count(w)
+        count_dict[w] = words_7plus_list_low_register.count(w)
 
     freq = []
     for w1 in count_dict:
